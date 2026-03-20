@@ -126,7 +126,8 @@ export function listOpenclawSkills(): { skills: SkillInfo[]; agents: Record<stri
   }
 
   const customSkills = scanSkillsDir(path.join(OPENCLAW_HOME, "skills"), "custom");
-  const allSkills = [...builtinSkills, ...extSkills, ...customSkills];
+  const workspaceSkills = scanSkillsDir(path.join(OPENCLAW_HOME, "workspace", "skills"), "workspace");
+  const allSkills = [...builtinSkills, ...extSkills, ...customSkills, ...workspaceSkills];
 
   const agentSkills = getAgentSkillsFromSessions();
   for (const skill of allSkills) {

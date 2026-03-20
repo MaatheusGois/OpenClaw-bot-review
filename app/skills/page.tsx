@@ -173,6 +173,7 @@ export default function SkillsPage() {
   const filtered = skills.filter((skill) => {
     if (filter === "builtin" && skill.source !== "builtin") return false;
     if (filter === "extension" && !skill.source.startsWith("extension:")) return false;
+    if (filter === "workspace" && skill.source !== "workspace") return false;
     if (filter === "custom" && skill.source !== "custom") return false;
 
     if (!search) return true;
@@ -188,12 +189,14 @@ export default function SkillsPage() {
   const sourceLabel = (source: string) => {
     if (source === "builtin") return t("skills.source.builtin");
     if (source.startsWith("extension:")) return source.replace("extension:", `${t("skills.extension")}:`);
+    if (source === "workspace") return t("skills.workspace");
     return t("skills.source.custom");
   };
 
   const sourceBadgeClass = (source: string) => {
     if (source === "builtin") return "bg-blue-500/20 text-blue-400";
     if (source.startsWith("extension:")) return "bg-purple-500/20 text-purple-400";
+    if (source === "workspace") return "bg-orange-500/20 text-orange-400";
     return "bg-green-500/20 text-green-400";
   };
 
@@ -218,6 +221,7 @@ export default function SkillsPage() {
 
   const builtinCount = skills.filter((skill) => skill.source === "builtin").length;
   const extensionCount = skills.filter((skill) => skill.source.startsWith("extension:")).length;
+  const workspaceCount = skills.filter((skill) => skill.source === "workspace").length;
   const customCount = skills.filter((skill) => skill.source === "custom").length;
 
   return (
@@ -226,7 +230,7 @@ export default function SkillsPage() {
         <div>
           <h1 className="text-2xl font-bold">{t("skills.title")}</h1>
           <p className="text-[var(--text-muted)] text-sm mt-1">
-            共 {skills.length} {t("skills.count")}（{t("skills.builtin")} {builtinCount} / {t("skills.extension")} {extensionCount} / {t("skills.custom")} {customCount}）
+            共 {skills.length} {t("skills.count")}（{t("skills.builtin")} {builtinCount} / {t("skills.extension")} {extensionCount} / {t("skills.workspace")} {workspaceCount} / {t("skills.custom")} {customCount}）
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-3">
@@ -241,7 +245,7 @@ export default function SkillsPage() {
 
       <div className="flex flex-col gap-3 mb-6 md:flex-row md:items-center">
         <div className="flex flex-wrap rounded-lg border border-[var(--border)] overflow-hidden">
-          {(["all", "builtin", "extension", "custom"] as const).map((nextFilter) => (
+          {(["all", "builtin", "extension", "workspace", "custom"] as const).map((nextFilter) => (
             <button
               key={nextFilter}
               onClick={() => setFilter(nextFilter)}
@@ -257,6 +261,8 @@ export default function SkillsPage() {
                   ? t("skills.builtin")
                   : nextFilter === "extension"
                     ? t("skills.extension")
+                    : nextFilter === "workspace"
+                    ? t("skills.workspace")
                     : t("skills.custom")}
             </button>
           ))}
