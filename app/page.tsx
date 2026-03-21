@@ -780,13 +780,14 @@ export default function Home() {
             </div>
           </div>
           {(() => {
-            const currentData = statsRange === "total" ? allStats.daily : allStats[statsRange];
+            const currentData = statsRange === "total" ? allStats.monthly : allStats[statsRange];
             let totalInput: number, totalOutput: number, totalMsgs: number;
             if (statsRange === "total") {
-              // Sum all data points
-              totalInput = currentData.reduce((s, d) => s + d.inputTokens, 0);
-              totalOutput = currentData.reduce((s, d) => s + d.outputTokens, 0);
-              totalMsgs = currentData.reduce((s, d) => s + d.messageCount, 0);
+              // Sum all data points (use daily for accurate totals, chart uses monthly)
+              const allDaily = allStats.daily;
+              totalInput = allDaily.reduce((s, d) => s + d.inputTokens, 0);
+              totalOutput = allDaily.reduce((s, d) => s + d.outputTokens, 0);
+              totalMsgs = allDaily.reduce((s, d) => s + d.messageCount, 0);
             } else {
               // Show current period only (today/this week/this month)
               const now = new Date();
