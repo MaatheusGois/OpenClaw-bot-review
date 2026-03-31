@@ -10,7 +10,7 @@ const BUGS_ENABLED_KEY = "pixel-office-bugs-enabled";
 const BUGS_COUNT_KEY = "pixel-office-bugs-count";
 const BUGS_MAX = 400;
 
-type NavIconName = "agents" | "pixelOffice" | "models" | "sessions" | "stats" | "alerts" | "skills";
+type NavIconName = "agents" | "pixelOffice" | "models" | "sessions" | "stats" | "alerts" | "skills" | "workspace" | "daily";
 type PixelTone = "base" | "shade" | "light";
 type PixelRect = { x: number; y: number; w?: number; h?: number; tone?: PixelTone; opacity?: number };
 type PixelPalette = { base: string; shade: string; light: string };
@@ -176,6 +176,38 @@ function NavPixelIcon({ name, active }: { name: NavIconName; active: boolean }) 
           ]}
         />
       );
+    case "workspace":
+      return (
+        <PixelSvg
+          className={baseClass}
+          palette={palette}
+          pixels={[
+            { x: 2, y: 2, w: 12, h: 1, tone: "light" },
+            { x: 1, y: 3, w: 14, h: 10, tone: "base" },
+            { x: 2, y: 13, w: 12, h: 1, tone: "shade" },
+            { x: 3, y: 5, w: 3, h: 3, tone: "light", opacity: 0.6 },
+            { x: 8, y: 5, w: 3, h: 3, tone: "light", opacity: 0.6 },
+            { x: 3, y: 9, w: 3, h: 3, tone: "shade" },
+            { x: 8, y: 9, w: 3, h: 3, tone: "shade" },
+          ]}
+        />
+      );
+    case "daily":
+      return (
+        <PixelSvg
+          className={baseClass}
+          palette={palette}
+          pixels={[
+            { x: 4, y: 1, w: 8, h: 1, tone: "light" },
+            { x: 3, y: 2, w: 10, h: 12, tone: "base" },
+            { x: 4, y: 14, w: 8, h: 1, tone: "shade" },
+            { x: 4, y: 4, w: 8, h: 1, tone: "light" },
+            { x: 4, y: 7, w: 8, h: 1, tone: "base" },
+            { x: 4, y: 10, w: 8, h: 1, tone: "base" },
+            { x: 6, y: 6, w: 4, h: 1, tone: "light", opacity: 0.7 },
+          ]}
+        />
+      );
   }
 }
 
@@ -205,6 +237,8 @@ const NAV_ITEMS: { group: string; items: { href: string; icon: NavIconName; labe
     items: [
       { href: "/", icon: "agents", labelKey: "nav.agents" },
       { href: "/pixel-office", icon: "pixelOffice", labelKey: "nav.pixelOffice" },
+      { href: "/workspace", icon: "workspace", labelKey: "nav.workspace" },
+      { href: "/daily", icon: "daily", labelKey: "nav.daily" },
       { href: "/models", icon: "models", labelKey: "nav.models" },
     ],
   },
