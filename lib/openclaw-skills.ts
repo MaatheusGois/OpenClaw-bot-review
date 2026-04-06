@@ -81,7 +81,7 @@ function getConfiguredAgentWorkspaces(): Array<{ id: string; workspace?: string 
       .filter((agent: unknown): agent is { id: string; workspace?: string } => {
         return Boolean(agent && typeof agent === "object" && typeof (agent as { id?: string }).id === "string");
       })
-      .map((agent) => ({ id: agent.id, workspace: agent.workspace }));
+      .map((agent: { id: string; workspace?: string }) => ({ id: agent.id, workspace: agent.workspace }));
   } catch {
     return [];
   }
