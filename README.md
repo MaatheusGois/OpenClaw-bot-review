@@ -75,6 +75,28 @@ OPENCLAW_HOME=/opt/openclaw
 npm run start
 ```
 
+### R&D Council operator APIs
+
+The Self-Improvement and R&D Council actions can write local files such as `rd-council-items.json`, `idea_ledger.json`, decision logs, and local work-order handoff state. For safety, those operator APIs require an explicit token by default:
+
+```bash
+OPENCLAW_OPERATOR_TOKEN="replace-with-a-long-random-token" npm run start
+```
+
+Then set the same token in the browser console for the local dashboard origin:
+
+```js
+localStorage.setItem("openclaw_operator_token", "replace-with-a-long-random-token")
+```
+
+For trusted local development only, you can opt out of token auth and rely on localhost checks:
+
+```bash
+OPENCLAW_ALLOW_UNAUTHENTICATED_LOCAL_OPERATOR_UI=true npm run start
+```
+
+Do not enable unauthenticated local mode on a dashboard exposed through a tunnel, shared host, reverse proxy, or public network.
+
 ## Docker Deployment
 
 You can also deploy the dashboard using Docker:
