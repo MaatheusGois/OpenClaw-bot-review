@@ -305,6 +305,8 @@ const translations: Record<Locale, Record<string, string>> = {
     // nav sidebar
     "nav.overview": "总览",
     "nav.agents": "机器人",
+    "nav.workspace": "Agent 工作台",
+    "nav.daily": "今日播报",
     "nav.models": "模型列表",
     "nav.monitor": "监控",
     "nav.sessions": "会话列表",
@@ -597,6 +599,8 @@ const translations: Record<Locale, Record<string, string>> = {
     // nav sidebar
     "nav.overview": "Overview",
     "nav.agents": "Bots",
+    "nav.workspace": "Agent Workspace",
+    "nav.daily": "Daily Report",
     "nav.models": "Models",
     "nav.monitor": "Monitor",
     "nav.sessions": "Sessions",
