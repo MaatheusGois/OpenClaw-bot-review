@@ -243,6 +243,13 @@ const NAV_ITEMS: { group: string; items: { href: string; icon: NavIconName; labe
     ],
   },
   {
+    group: "nav.rnd",
+    items: [
+      { href: "/rd-council", icon: "alerts", labelKey: "nav.rdCouncil" },
+      { href: "/self-improvement", icon: "alerts", labelKey: "nav.selfImprovement" },
+    ],
+  },
+  {
     group: "nav.monitor",
     items: [
       { href: "/sessions", icon: "sessions", labelKey: "nav.sessions" },

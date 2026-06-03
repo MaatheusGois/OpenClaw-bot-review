@@ -6,3 +6,8 @@ next-env.d.ts
 .DS_Store
 /.openclaw
 /public/assets/pixel-office/*.mp3
+
+# Local R&D Council runtime state
+rd-council-work-orders.json
+self-improvement-command-log.jsonl
+rd-council-decision-log.jsonl
