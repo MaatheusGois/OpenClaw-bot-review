@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useCallback, useEffect, ReactNode } from "react";
 
-export type Locale = "zh-TW" | "zh" | "en";
+export type Locale = "vi" | "zh-TW" | "zh" | "en";
 
 const translations: Record<Locale, Record<string, string>> = {
   "zh-TW": {
@@ -978,6 +978,294 @@ const translations: Record<Locale, Record<string, string>> = {
     "pixelOffice.gatewaySre.tip.degraded": "Gateway degraded: latency high",
     "pixelOffice.gatewaySre.tip.down": "Gateway down",
   },
+  vi: {
+    // layout
+    "site.title": "OpenClaw Bảng Điều Khiển Bot",
+    "site.desc": "Xem tất cả cấu hình bot OpenClaw",
+
+    // nav sidebar
+    "nav.overview": "Tổng quan",
+    "nav.agents": "Bot",
+    "nav.models": "Mô hình",
+    "nav.monitor": "Giám sát",
+    "nav.sessions": "Phiên hội thoại",
+    "nav.stats": "Thống kê",
+    "nav.pixelOffice": "Văn phòng Pixel",
+    "nav.config": "Cấu hình",
+    "nav.skills": "Kỹ năng",
+    "nav.alerts": "Cảnh báo",
+    "nav.experiments": "Thử nghiệm",
+    "nav.expandSidebar": "Mở rộng thanh bên",
+    "nav.collapseSidebar": "Thu gọn thanh bên",
+    "nav.bugsOn": "Bật Bugs",
+    "nav.bugsOff": "Tắt Bugs",
+    "nav.bugsCount": "Số lượng",
+
+    // alerts page
+    "alerts.title": "Trung tâm Cảnh báo",
+    "alerts.subtitle": "Cấu hình cảnh báo và thông báo hệ thống",
+    "alerts.enableAlerts": "Bật cảnh báo",
+    "alerts.enableDesc": "Bật/tắt tất cả thông báo cảnh báo",
+    "alerts.receiveAgent": "Bot nhận cảnh báo",
+    "alerts.rules": "Quy tắc cảnh báo",
+    "alerts.rulesDesc": "Cấu hình điều kiện kích hoạt cảnh báo",
+    "alerts.triggered": "Cảnh báo đã kích hoạt ({count})",
+    "alerts.checking": "Đang kiểm tra cảnh báo...",
+    "alerts.checkNow": "Kiểm tra ngay",
+    "alerts.checkInterval": "Tần suất kiểm tra",
+
+    // common
+    "common.loading": "Đang suy nghĩ...",
+    "common.loadError": "Tải thất bại",
+    "common.backHome": "← Về trang chủ",
+    "common.backOverview": "← Về tổng quan",
+    "common.noData": "Không có dữ liệu",
+    "common.close": "Đóng",
+    "common.test": "🧪 Kiểm thử",
+    "common.testing": "⏳ Đang kiểm thử...",
+    "common.justNow": "vừa xong",
+    "common.minutesAgo": "phút trước",
+    "common.hoursAgo": "giờ trước",
+    "common.daysAgo": "ngày trước",
+    "common.manualRefresh": "Làm mới thủ công",
+    "common.seconds": "giây",
+    "common.minute": "phút",
+    "common.minutes": "phút",
+
+    // home page
+    "home.title": "🐾 OpenClaw Bảng Điều Khiển Bot",
+    "home.agentCount": "bot",
+    "home.pageTitle": "OpenClaw Bot",
+    "home.defaultModel": "Mô hình mặc định",
+    "home.viewModels": "Xem danh sách mô hình →",
+    "home.skillMgmt": "🧩 Quản lý kỹ năng",
+    "home.testAll": "Kiểm thử mô hình đã liên kết",
+    "home.testingAll": "Đang kiểm thử mô hình...",
+    "home.testOk": "Bình thường",
+    "home.testFail": "Bất thường",
+    "home.updatedAt": "Cập nhật lúc",
+    "home.refreshManual": "🔄 Làm mới thủ công",
+    "home.globalTrend": "📊 Thống kê tổng quan",
+    "home.totalInputToken": "Tổng Token đầu vào",
+    "home.totalOutputToken": "Tổng Token đầu ra",
+    "home.totalMessages": "Tổng số tin nhắn",
+    "home.tokenTrend": "🔢 Xu hướng tiêu thụ Token",
+    "home.avgResponseTrend": "⏱️ Xu hướng thời gian phản hồi TB",
+    "home.groupTopology": "💬 Cấu trúc nhóm chat",
+    "home.fallbackModels": "🔄 Mô hình dự phòng",
+    "home.feishuGroup": "Nhóm Feishu",
+    "home.discordChannel": "Kênh Discord",
+    "home.bots": "bot",
+    "home.noResponseData": "Chưa có dữ liệu thời gian phản hồi",
+    "home.testPlatforms": "Kiểm thử nền tảng",
+    "home.testingPlatforms": "Đang kiểm thử nền tảng...",
+    "home.testSessions": "Kiểm thử phiên Agent",
+    "home.testingSessions": "Đang kiểm thử phiên...",
+    "home.testDmSessions": "Kiểm thử phiên DM",
+    "home.testingDmSessions": "Đang kiểm thử...",
+    "home.agentTaskTracking": "Theo dõi tác vụ Agent",
+    "home.agentTaskSubtasks": "Tác vụ con",
+    "home.agentTaskCron": "Tác vụ định kỳ",
+    "home.agentTaskState.working": "Đang chạy",
+    "home.agentTaskState.waiting": "Đang chờ",
+    "home.agentTaskState.idle": "Rảnh rỗi",
+    "home.agentTaskNoSubtasks": "Không có tác vụ con đang hoạt động",
+    "home.agentTaskNoCron": "Không có hoạt động định kỳ",
+    "home.agentTaskCronState.running": "Đang chạy",
+    "home.agentTaskCronState.success": "Thành công",
+    "home.agentTaskCronState.failed": "Thất bại",
+    "home.agentTaskCronFailures": "Thất bại liên tiếp",
+    "home.agentTaskCronNoSummary": "Chưa có tóm tắt",
+    "home.agentTaskCronDuration": "Thời lượng",
+    "home.agentTaskCronNextRun": "Lần chạy tiếp",
+
+    // agent card
+    "agent.model": "Mô hình",
+    "agent.platform": "Nền tảng",
+    "agent.feishuAppId": "Feishu App ID",
+    "agent.sessionCount": "Số phiên",
+    "agent.messageCount": "Số tin nhắn",
+    "agent.tokenUsage": "Token sử dụng",
+    "agent.totalTokenTip": "Tổng Token đã dùng",
+    "agent.stats": "Thống kê",
+    "agent.lastActive": "Hoạt động lần cuối",
+    "agent.todayAvgResponse": "Phản hồi TB",
+    "agent.todayAvgResponseTip": "Thời gian phản hồi trung bình hôm nay",
+    "agent.switchModel": "Đổi mô hình",
+    "agent.saveModel": "Lưu & Áp dụng",
+    "agent.cancelModel": "Hủy",
+    "agent.modelSaving": "Đang áp dụng...",
+    "agent.modelApplyHint": "Sau khi lưu, Gateway sẽ tự động khởi động lại để áp dụng mô hình mới.",
+    "agent.modelApplyFailed": "Áp dụng mô hình thất bại",
+    "agent.currentUnknownModel": "Mô hình hiện tại (không có trong danh sách)",
+
+    // agent status
+    "agent.status.working": "Đang làm việc",
+    "agent.status.online": "Trực tuyến",
+    "agent.status.idle": "Rảnh rỗi",
+    "agent.status.offline": "Ngoại tuyến",
+    "agent.inUse": "Đang dùng:",
+    "agent.openChat": "Nhấn để mở trang chat",
+
+    // platform
+    "platform.feishu": "📱 Feishu",
+    "platform.yuanbao": "🤖 Yuanbao",
+    "platform.discord": "🎮 Discord",
+    "platform.telegram": "✈️ Telegram",
+    "platform.whatsapp": "💬 WhatsApp",
+    "platform.qqbot": "🐧 QQBot",
+    "platform.wecom": "💼 WeCom",
+
+    // time range
+    "range.daily": "Theo ngày",
+    "range.weekly": "Theo tuần",
+    "range.monthly": "Theo tháng",
+
+    // refresh options
+    "refresh.manual": "Làm mới thủ công",
+    "refresh.10s": "10 giây",
+    "refresh.30s": "30 giây",
+    "refresh.1m": "1 phút",
+    "refresh.5m": "5 phút",
+    "refresh.10m": "10 phút",
+
+    // models page
+    "models.title": "Danh sách mô hình OpenClaw",
+    "models.providerCount": "Nhà cung cấp",
+    "models.totalPrefix": "Tổng",
+    "models.testAll": "🧪 Kiểm thử tất cả mô hình",
+    "models.testingAll": "⏳ Đang kiểm thử...",
+    "models.colModelId": "ID Mô hình",
+    "models.colName": "Tên",
+    "models.colAccessMode": "Phương thức truy cập",
+    "models.accessModeApiKey": "api_key",
+    "models.accessModeAuth": "auth",
+    "models.colContext": "Cửa sổ ngữ cảnh",
+    "models.colMaxOutput": "Đầu ra tối đa",
+    "models.colInputType": "Loại đầu vào",
+    "models.colReasoning": "Suy luận",
+    "models.colInputToken": "Token đầu vào",
+    "models.colOutputToken": "Token đầu ra",
+    "models.colAvgResponse": "Phản hồi TB",
+    "models.colTest": "Kiểm thử",
+    "models.noExplicitModels": "Không có định nghĩa mô hình rõ ràng (suy ra từ tên provider)",
+    "models.defaultModel": "Mô hình chính",
+    "models.fallbackModels": "Mô hình dự phòng",
+
+    // stats page
+    "stats.title": "Thống kê tin nhắn",
+    "stats.subtitle": "Phân tích tiêu thụ Token và thời gian phản hồi",
+    "stats.totalInputToken": "Tổng Token đầu vào",
+    "stats.totalOutputToken": "Tổng Token đầu ra",
+    "stats.totalMessages": "Tổng số tin nhắn",
+    "stats.dataPeriod": "Chu kỳ dữ liệu",
+    "stats.tokenConsumption": "🔢 Tiêu thụ Token",
+    "stats.avgResponseTime": "⏱️ Thời gian phản hồi TB",
+    "stats.sessionList": "📋 Danh sách phiên",
+    "stats.home": "← Trang chủ",
+    "stats.missingAgent": "Thiếu tham số agent",
+    "stats.noResponseData": "Chưa có dữ liệu thời gian phản hồi",
+    "stats.selectAgent": "Chọn một bot để xem thống kê tin nhắn",
+    "stats.backToAgents": "← Quay lại danh sách bot",
+
+    // sessions page
+    "sessions.title": "Danh sách phiên của",
+    "sessions.sessionCount": "phiên",
+    "sessions.totalToken": "Tổng Token",
+    "sessions.missingAgent": "Thiếu tham số agent",
+    "sessions.type.main": "Phiên chính",
+    "sessions.type.feishu-dm": "Feishu tin nhắn riêng",
+    "sessions.type.feishu-group": "Feishu nhóm",
+    "sessions.type.discord-dm": "Discord tin nhắn riêng",
+    "sessions.type.discord-channel": "Discord kênh",
+    "sessions.type.telegram-dm": "Telegram tin nhắn riêng",
+    "sessions.type.telegram-group": "Telegram nhóm",
+    "sessions.type.whatsapp-dm": "WhatsApp tin nhắn riêng",
+    "sessions.type.whatsapp-group": "WhatsApp nhóm",
+    "sessions.type.cron": "Tác vụ định kỳ",
+    "sessions.type.unknown": "Không xác định",
+    "sessions.test": "Kiểm thử",
+    "sessions.testing": "Đang kiểm thử...",
+    "sessions.testOk": "✅ Bình thường",
+    "sessions.testFail": "❌ Bất thường",
+    "sessions.testReply": "Phản hồi",
+    "sessions.testTime": "Thời gian",
+    "sessions.context": "Ngữ cảnh",
+    "sessions.selectAgent": "Chọn một bot để xem danh sách phiên",
+    "sessions.testAll": "🧪 Kiểm thử tất cả",
+    "sessions.testingAll": "⏳ Đang kiểm thử...",
+    "sessions.testHint": "Kiểm thử chỉ xác minh khả năng phản hồi của Agent. Tin nhắn sẽ không hiển thị trong Feishu/Discord.",
+    "sessions.testAllResult": "Kiểm thử hoàn tất",
+    "sessions.testAllOk": "Đạt",
+    "sessions.testAllFail": "Thất bại",
+    "sessions.backToAgents": "← Quay lại danh sách bot",
+
+    // skills page
+    "skills.title": "🧩 Quản lý kỹ năng",
+    "skills.count": "kỹ năng",
+    "skills.builtin": "Tích hợp",
+    "skills.extension": "Mở rộng",
+    "skills.custom": "Tùy chỉnh",
+    "skills.all": "Tất cả",
+    "skills.search": "Tìm kiếm kỹ năng...",
+    "skills.showing": "Đang hiển thị",
+    "skills.unit": "cái",
+    "skills.noDesc": "Không có mô tả",
+    "skills.source.builtin": "Tích hợp",
+    "skills.source.custom": "Tùy chỉnh",
+    "skills.viewSource": "Xem SKILL.md",
+    "skills.contentTitle": "Nội dung SKILL.md",
+    "skills.loadingContent": "Đang tải nội dung kỹ năng...",
+    "skills.contentLoadFailed": "Tải nội dung kỹ năng thất bại",
+
+    // gateway status
+    "gateway.healthy": "Gateway hoạt động bình thường",
+    "gateway.unhealthy": "Gateway bất thường",
+    "gateway.fetchError": "Không thể kiểm tra trạng thái Gateway",
+
+    // pixel office
+    "pixelOffice.title": "Văn phòng OpenClaw Agents",
+    "pixelOffice.editMode": "Chỉnh sửa bố cục",
+    "pixelOffice.exitEdit": "Thoát chỉnh sửa",
+    "pixelOffice.save": "Lưu",
+    "pixelOffice.reset": "Đặt lại",
+    "pixelOffice.undo": "Hoàn tác",
+    "pixelOffice.redo": "Làm lại",
+    "pixelOffice.sound": "Âm thanh",
+    "pixelOffice.resetView": "Đặt lại giao diện",
+    "pixelOffice.state.working": "Đang làm việc",
+    "pixelOffice.state.idle": "Đang rảnh",
+    "pixelOffice.state.offline": "Ngoại tuyến",
+    "pixelOffice.state.waiting": "Đang chờ",
+    "pixelOffice.tempWorker": "Tạm thời",
+    "pixelOffice.tempWorker.source": "Nguồn nhân viên tạm",
+    "pixelOffice.tempWorker.createdBy": "đã tạo subagent",
+    "pixelOffice.broadcast.online": "đã lên mạng",
+    "pixelOffice.broadcast.offline": "đã ngoại tuyến",
+    "pixelOffice.heatmap.title": "Biểu đồ nhiệt hoạt động Agent",
+    "pixelOffice.heatmap.messages": "tin nhắn",
+    "pixelOffice.idleRank.title": "Bảng xếp hạng lười biếng",
+    "pixelOffice.idleRank.online": "Trực tuyến",
+    "pixelOffice.idleRank.active": "Hoạt động",
+    "pixelOffice.idleRank.idle": "Nghỉ ngơi",
+    "pixelOffice.serverStatus.checking": "Đang kiểm tra trạng thái máy chủ...",
+    "pixelOffice.serverStatus.healthy": "Dịch vụ bình thường",
+    "pixelOffice.serverStatus.degraded": "Dịch vụ suy giảm",
+    "pixelOffice.serverStatus.down": "Dịch vụ gặp sự cố",
+    "pixelOffice.serverStatus.unknown": "Trạng thái không xác định",
+    "pixelOffice.serverStatus.fetchFailed": "Kiểm tra trạng thái thất bại",
+    "pixelOffice.gatewaySre.name": "Kỹ sư trực ca",
+    "pixelOffice.gatewaySre.statusLabel": "Trạng thái Gateway",
+    "pixelOffice.gatewaySre.responseMs": "Thời gian kiểm tra",
+    "pixelOffice.gatewaySre.status.unknown": "Đang giám sát",
+    "pixelOffice.gatewaySre.status.healthy": "Khỏe mạnh",
+    "pixelOffice.gatewaySre.status.degraded": "Suy giảm",
+    "pixelOffice.gatewaySre.status.down": "Sự cố",
+    "pixelOffice.gatewaySre.tip.unknown": "Đang chờ dữ liệu sức khỏe gateway",
+    "pixelOffice.gatewaySre.tip.healthy": "Gateway hoạt động tốt",
+    "pixelOffice.gatewaySre.tip.degraded": "Gateway suy giảm: độ trễ cao",
+    "pixelOffice.gatewaySre.tip.down": "Gateway gặp sự cố",
+  },
 };
 
 interface I18nContextType {
@@ -987,17 +1275,17 @@ interface I18nContextType {
 }
 
 const I18nContext = createContext<I18nContextType>({
-  locale: "zh",
+  locale: "vi",
   setLocale: () => {},
   t: (key) => key,
 });
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("zh");
+  const [locale, setLocaleState] = useState<Locale>("vi");
 
   useEffect(() => {
     const saved = localStorage.getItem("locale") as Locale;
-    if (saved && (saved === "zh-TW" || saved === "zh" || saved === "en")) {
+    if (saved && (saved === "vi" || saved === "zh-TW" || saved === "zh" || saved === "en")) {
       setLocaleState(saved);
     }
   }, []);
@@ -1010,7 +1298,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const t = useCallback(
-    (key: string) => translations[locale]?.[key] ?? translations.zh[key] ?? key,
+    (key: string) => translations[locale]?.[key] ?? translations.vi[key] ?? translations.zh[key] ?? key,
     [locale]
   );
 
@@ -1033,6 +1321,7 @@ export function LanguageSwitcher() {
       onChange={(e) => setLocale(e.target.value as Locale)}
       className="px-3 py-1.5 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs font-medium hover:border-[var(--accent)] transition cursor-pointer text-[var(--text)]"
     >
+      <option value="vi">Tiếng Việt</option>
       <option value="zh-TW">繁體中文</option>
       <option value="zh">简体中文</option>
       <option value="en">English</option>
