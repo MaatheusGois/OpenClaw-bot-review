@@ -49,6 +49,9 @@ cd OpenClaw-bot-review
 # Install dependencies
 npm install
 
+# Build 
+npm run build
+
 # Start dev server
 npm run start
 ```
@@ -71,7 +74,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 By default, the dashboard reads config from `~/.openclaw/openclaw.json`. To use a custom path, set the `OPENCLAW_HOME` environment variable:
 
 ```bash
-OPENCLAW_HOME=/opt/openclaw 
+OPENCLAW_HOME=/opt/openclaw
+npm run build
 npm run start
 ```
 
